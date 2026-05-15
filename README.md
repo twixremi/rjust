@@ -14,6 +14,7 @@ By moving hot code paths from Java to Rust, `rjust` eliminates micro-stutters ca
 ## Ecosystem & Building
 
 This project utilizes the **Crow Build System** for module compilation, incremental task runner management, and offline dependency provisioning. 
+or just use cargo :) but i recommend use my builder /twixremi/cbs
 
 To build `rjust` and its sample modifications, ensure you have the `crow` binary installed and run:
 
