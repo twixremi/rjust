@@ -25,7 +25,13 @@ pub fn initialize() -> Result<()> {
     Ok(())
 }
 
-#[cfg(not(any(target_os = "linux", target_os = "windows")))]
+#[cfg(target_os = "macos")]
+pub fn initialize() -> Result<()> {
+    println!("[rjust] macOS Input Control initialized.");
+    Ok(())
+}
+
+#[cfg(not(any(target_os = "linux", target_os = "windows", target_os = "macos")))]
 pub fn initialize() -> Result<()> {
     Ok(())
 }

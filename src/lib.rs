@@ -21,7 +21,7 @@ struct ShmPtr(*mut shm::SharedData);
 unsafe impl Send for ShmPtr {}
 unsafe impl Sync for ShmPtr {}
 
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "linux", target_os = "macos"))]
 fn platform_init_logs() {
     use std::os::unix::io::AsRawFd;
     

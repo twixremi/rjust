@@ -28,4 +28,13 @@ pub fn initialize() -> Result<()> {
         .spawn();
 
     Ok(())
+}#[cfg(target_os = "macos")]
+pub fn initialize() -> Result<()> {
+    println!("[rjust] macOS Console Diagnostics initialized. Using redirected standard logs.");
+    Ok(())
+}
+
+#[cfg(not(any(target_os = "linux", target_os = "windows", target_os = "macos")))]
+pub fn initialize() -> Result<()> {
+    Ok(())
 }

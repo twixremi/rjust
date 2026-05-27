@@ -62,10 +62,13 @@ fn load_module_with_protection(path: &Path) -> Result<()> {
 fn load_module(path: &Path) -> Result<()> {
     verify_signature(path).context("Signature verification failed")?;
 
+    // Canonicalize path to ensure correct DLL load when privileges or directory resolution is restricted (e.g. Windows Low Integrity)
+    let abs_path = fs::canonicalize(path).context("Failed to canonicalize library path")?;
+
     unsafe {
-        let lib = Library::new(path)?;
+        let lib = Library::new(&abs_path)?;
         if let Ok(init_fn) = lib.get::<Symbol<unsafe extern "C" fn()>>(b"rjust_module_init") {
-            println!("[rjust] Calling entry point for {:?}", path.file_name().unwrap());
+            println!("[rjust] Calling entry point for {:?}", abs_path.file_name().unwrap());
             init_fn();
         }
         let mut modules = LOADED_MODULES.lock().unwrap();
