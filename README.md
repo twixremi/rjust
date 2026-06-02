@@ -10,7 +10,7 @@ The framework splits execution into two standalone boundaries connected via IPC 
 2. **Rust Worker:** A fully native, isolated process that consumes shared memory data, executes complex algorithms (kinematics, ray tracing, OS-level inputs), and operates within a safe system sandbox.
 
 ## Mod At Alpha, contains bugs! 
-Project still developing
+Project still developing and developed by AI!
 
 ## Ecosystem & Building
 
@@ -19,6 +19,7 @@ or just use cargo :) but i recommend use my builder /twixremi/cbs
 
 To build `rjust` and its sample modifications, ensure you have the `crow` binary installed and run:
 
+
 ```bash
 crow build
-larp vibe-code 0_o
+
