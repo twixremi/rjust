@@ -1,3 +1,4 @@
+<img width="1846" height="178" alt="Page 1" src="https://github.com/user-attachments/assets/ddd28fbb-cdd1-4785-b2f6-1923825760c3" />
 # rjust Framework
 
 `rjust` is a high-performance, low-level modding framework and runtime environment designed for JVM applications (such as Minecraft). It decouples heavy computation from the JVM garbage collector by orchestrating native execution threads in isolated sandboxes.
