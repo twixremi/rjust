@@ -1,0 +1,26 @@
+<img width="1846" height="178" alt="Page 1" src="https://github.com/user-attachments/assets/ddd28fbb-cdd1-4785-b2f6-1923825760c3" />
+# rjust Framework
+
+`rjust` is a high-performance, low-level modding framework and runtime environment designed for JVM applications (such as Minecraft). It decouples heavy computation from the JVM garbage collector by orchestrating native execution threads in isolated sandboxes.
+
+## Architecture
+
+The framework splits execution into two standalone boundaries connected via IPC (Inter-Process Communication):
+
+1. **Java Agent:** A lightweight agent injected into the host JVM process to handle memory mapping, primitive state synchronization, and execution hooks.
+2. **Rust Worker:** A fully native, isolated process that consumes shared memory data, executes complex algorithms (kinematics, ray tracing, OS-level inputs), and operates within a safe system sandbox.
+
+## Mod At Alpha, contains bugs! 
+Project still developing and developed by AI!
+
+## Ecosystem & Building
+
+This project utilizes the **Crow Build System** for module compilation, incremental task runner management, and offline dependency provisioning. 
+or just use cargo :) but i recommend use my builder /twixremi/cbs
+
+To build `rjust` and its sample modifications, ensure you have the `crow` binary installed and run:
+
+
+```bash
+crow build
+
